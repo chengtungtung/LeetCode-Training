@@ -13,6 +13,8 @@ public class MergeTwoSortedLists {
 //			
 //			Arrays.sort(finallist);
 //
-//	        return finallist;
+//	        return list1;
 //	    }
+	
+	
 }
