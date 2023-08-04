@@ -3,41 +3,50 @@ package tw.leetcode.test;
 import java.util.Arrays;
 
 public class MergeTwoSortedListstest {
-	//
-	//
-	ListNode list1 = new ListNode(1);
-	ListNode list2 = new ListNode(2,list1);
-	ListNode list3 = new ListNode(4,list2);
-	
-	class ListNode {
-		 int val;
-		
-		 ListNode next;
-	
-		 ListNode() {}
-		 ListNode(int val) { this.val = val; }
-		 ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-		 }
-	//		
-	//
+	Solution test = new Solution();
+	ListNode list12 = new ListNode(4);
+	ListNode list11 = new ListNode(2, list12);
+	ListNode list1 = new ListNode(1, list11);
+
+	ListNode list22 = new ListNode(4);
+	ListNode list21 = new ListNode(3, list22);
+	ListNode list2 = new ListNode(1, list21);
+
 	public static void main(String[] args) {
-		int[] list1 = {1,2,4};
-		int[] list2 = {1,3,4};
-		int[] finallist = new int[list1.length+list2.length];
-		
-		for(int i=0 ; i<list1.length ;i++) {
-			finallist[i]=list1[i];
-		}
-		for(int i=0 ; i<list2.length ;i++) {
-			finallist[list1.length+i]=list2[i];
-		}
-		
-		Arrays.sort(finallist);
-		
-		for(int a :finallist) {
-			System.out.println(a);
-		}
-		
+		MergeTwoSortedListstest test1 = new MergeTwoSortedListstest();
+		System.out.println(test1.test.mergeTwoLists(test1.list1, test1.list2));
+		System.out.println(test1.list1.val);
+		System.out.println(test1.list1.next.val);
+		System.out.println(test1.list1.next.next.val);
+		System.out.println(test1.list1.next.next.next.val);
+		System.out.println(test1.list1.next.next.next.next.val);
+		System.out.println(test1.list1.next.next.next.next.next.val);
 	}
 
+	class Solution {
+		
+		public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+			
+			if(list1.val<=list2.val) {
+				list1.next = list2;
+				System.out.println("ok");
+			}else {
+				list2.next = list1;	
+			}
+			
+			return list1;
+		}
+
+
+	}
+	class ListNode {
+		int val;
+		ListNode next;
+
+		ListNode() {}
+
+		ListNode(int val) {this.val = val;}
+
+		ListNode(int val, ListNode next) {this.val = val;this.next = next;}
+	}
 }
